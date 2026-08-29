@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #141414;
+    color: #fff;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95),
+        transparent
+    );
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #b3b3b3;
+}
+
+.perfil {
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    background: #e50914;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+    height: 80vh;
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 5% 60px;
+
+    background:
+        linear-gradient(
+            to right,
+            #000 0%,
+            rgba(0, 0, 0, 0.75) 35%,
+            rgba(0, 0, 0, 0.15) 100%
+        ),
+        linear-gradient(
+            to top,
+            #141414 0%,
+            transparent 30%
+        ),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80")
+        center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #ddd;
+}
+
+/* BOTÕES */
+
+.buttons {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    border: none;
+    padding: 13px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.play {
+    background: white;
+    color: black;
+}
+
+.play:hover {
+    background: #d6d6d6;
+    transform: scale(1.05);
+}
+
+.info {
+    background: rgba(109, 109, 110, 0.8);
+    color: white;
+}
+
+.info:hover {
+    background: rgba(109, 109, 110, 1);
+    transform: scale(1.05);
+}
+
+/* CONTEÚDO */
+
+main {
+    padding: 20px 5% 60px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+/* FILMES */
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+}
+
+.movie {
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #222;
+    transition: 0.3s;
+}
+
+.movie img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.movie:hover {
+    transform: scale(1.07);
+    z-index: 5;
+}
+
+.movie:hover img {
+    transform: scale(1.1);
+}
+
+/* TÍTULO DO FILME */
+
+.movie-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 40px 10px 12px;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95),
+        transparent
+    );
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 50px 5%;
+    text-align: center;
+    color: #777;
+    border-top: 1px solid #333;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e50914;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1100px) {
+    .movies {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .hero {
+        height: 70vh;
+        padding: 100px 25px 40px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .movies {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .movie {
+        height: 250px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 180px;
+    }
+
+    .movies {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .movie {
+        height: 220px;
+    }
+}
